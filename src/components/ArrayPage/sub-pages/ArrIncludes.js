@@ -1,26 +1,55 @@
-import React from 'react';
-import "./sub-pages.css";
-// import PropTypes from 'prop-types';
+import React from "react";
+import SyntaxHighlight from "../../SyntaxHighlight/SyntaxHighlight";
+import ParamDesc from "../../ParamDesc/ParamDesc";
 
-class ArrIncludes extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>includes()</h1>
-        <hr/>
-        <div className="sublabel">Description:</div>
-        <p className="subtext">Determines whether an array contains a specified element.</p>
-        <p className="subtext">Returns a boolean value.</p>
-        <p className="subtext">Element: the element to search for.</p> 
-        <p className="subtext">Start: Optional. Default at index 0. The position in the array to start the search.</p>
-        <div className="sublabel">Syntax:</div>
-        <p className="subtext">array.includes(element, start)</p>
-        <div className="sublabel">Example:</div>
-        <div className="example">
-        </div>
+// class changed into function to speed up optimization
+
+const ArrIncludes = () => {
+  return (
+    <div>
+      <h1>.includes()</h1>
+      <hr />
+    
+      <div className="sublabel">Description:</div>
+      <p className="subtext">
+        The <code>includes()</code> method determines whether an array includes a certain value among its entries
+      </p>
+      <ul>
+        <li>Returns <code>true</code> or <code>false</code> as appropriate</li>
+      </ul>
+    
+      <div className="sublabel">Syntax:</div>
+      <SyntaxHighlight syntax="array.includes(searchValue, fromIndex)" />
+    
+      <h5>Parameter Description:</h5>
+      <ParamDesc
+        isRequired={true}
+        paramName="searchValue"
+        paramNameWidth={110}
+        paramDesc="value to search for in the array"
+      />
+      <ParamDesc
+        isRequired={false}
+        paramName="fromIndex"
+        paramNameWidth={110}
+        paramDesc="the index of where to begin searching"
+      />
+    
+      <div className="sublabel">Example:</div>
+      <div className="example">
+        <iframe
+          title="arr_includes"
+          height="400px"
+          width="100%"
+          src="https://repl.it/@William_Cruz/WretchedSpeedyBugs?lite=true"
+          scrolling="no"
+          frameBorder="no"
+          allowFullScreen={true}
+          sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default ArrIncludes;

@@ -1,14 +1,18 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import strings from './notebook.gif';
-import arrays from './arraysNotebook.gif';
-import numbers from './numbersNotebook.gif';
+// import strings from './notebook.gif';
+// import strings from './strings.gif';
+import strings from './strings2.gif'
+// import arrays from './arraysNotebook.gif';
+import arrays from './arrays.gif';
+// import numbers from './numbersNotebook.gif';
+import numbers from './numbers.gif';
 import "./HomeCard.css";
 import { Card, CardText, CardBody, CardTitle, CardImg } from 'reactstrap';
 
-const HomeCard = (props) => {
-  const { title, description, cardType } = props;
+// class changed into function to speed up optimization
 
+const HomeCard = (props) => {
+  const { title, description } = props;
   let cardImg = "";
   if (props.title === "Strings") {
     cardImg = <CardImg top src={strings} alt="strings" width="100%" />;
